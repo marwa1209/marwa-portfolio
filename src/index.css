@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color */
+  --color-ink: #080b14;
+  --color-ink-soft: #101628;
+  --color-ink-muted: #1a2238;
+  --color-mist: #e8e4dc;
+  --color-mist-soft: #c9c3b8;
+  --color-mist-dim: #8b8478;
+  --color-rose: #c45c6a;
+  --color-rose-deep: #9e3f4d;
+  --color-rose-soft: #e8a0a8;
+  --color-copper: #b8734a;
+  --color-champagne: #e6d5b8;
+  --color-champagne-bright: #f2e6d0;
+  --color-line: rgb(232 228 220 / 0.12);
+  --color-line-strong: rgb(232 228 220 / 0.22);
+
+  /* Font families */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  /* Type scale */
+  --text-display: clamp(3.25rem, 9vw, 7.5rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+
+  --text-h1: clamp(2.25rem, 5vw, 3.75rem);
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 600;
+
+  --text-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.65;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.14em;
+  --text-label--font-weight: 600;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  /* Shadows */
+  --shadow-soft: 0 18px 50px rgb(0 0 0 / 0.35);
+  --shadow-glow: 0 0 80px rgb(196 92 106 / 0.18);
+
+  /* Layout */
+  --max-width-shell: 72rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast: 220ms;
+    --duration-base: 450ms;
+    --duration-slow: 800ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    color: var(--color-mist);
+    background: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-rose) 55%, transparent);
+    color: var(--color-champagne-bright);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-champagne);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .ds-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.035;
+    pointer-events: none;
+  }
+
+  .ds-mesh {
+    background:
+      radial-gradient(ellipse 70% 55% at 18% 20%, rgb(196 92 106 / 0.28), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 82% 18%, rgb(230 213 184 / 0.14), transparent 50%),
+      radial-gradient(ellipse 60% 50% at 70% 78%, rgb(184 115 74 / 0.16), transparent 55%),
+      linear-gradient(165deg, var(--color-ink) 0%, var(--color-ink-soft) 48%, var(--color-ink) 100%);
+  }
+}
