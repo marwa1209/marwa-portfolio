@@ -72,7 +72,7 @@ export const companyProjects: Project[] = [
     company: 'sourcya',
     name: { en: 'TMT X', ar: 'TMT X' },
     description: {
-      en: 'Product marketing site in the Sorcya design-system family with i18n and lead-capture patterns.',
+      en: 'Product marketing site in the Sourcya design-system family with i18n and lead-capture patterns.',
       ar: 'موقع تسويقي للمنتج ضمن عائلة نظام تصميم سورسيا مع ترجمة وأنماط جذب العملاء.',
     },
     stack: ['Next.js', 'React', 'Tailwind', 'i18n', 'Framer Motion'],
@@ -83,7 +83,7 @@ export const companyProjects: Project[] = [
     company: 'sourcya',
     name: { en: 'Rehla', ar: 'رحلة' },
     description: {
-      en: 'Travel-related product site with bilingual UX, marketing sections, and shared Sorcya UI patterns.',
+      en: 'Travel-related product site with bilingual UX, marketing sections, and shared Sourcya UI patterns.',
       ar: 'موقع منتج سفر بتجربة ثنائية اللغة وأقسام تسويقية وأنماط واجهة مشتركة من سورسيا.',
     },
     stack: ['Next.js', 'React', 'Tailwind', 'i18n', 'Framer Motion'],
