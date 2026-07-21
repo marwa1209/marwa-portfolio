@@ -3,14 +3,17 @@ import { MapPin } from 'lucide-react'
 import { Section } from '@/design-system/Section'
 import { fadeUp, stagger } from '@/design-system/motion'
 import { profile } from '@/data/profile'
+import { useI18n } from '@/i18n/I18nProvider'
 
 export function About() {
+  const { t } = useI18n()
+
   return (
     <Section
       id="about"
-      eyebrow="About"
-      title="Building web products with clarity, care, and RTL in mind."
-      description="From marketing sites to dashboards and donation flows, I focus on maintainable front ends and thoughtful UX."
+      eyebrow={t('about.eyebrow')}
+      title={t('about.title')}
+      description={t('about.description')}
     >
       <motion.div
         variants={stagger}
@@ -20,25 +23,21 @@ export function About() {
         className="grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-16"
       >
         <motion.div variants={fadeUp} className="space-y-5 text-body text-mist-soft text-pretty">
-          <p>{profile.about}</p>
-          <p>
-            Based in {profile.location}, I collaborate with product and design teams to ship
-            bilingual experiences, improve performance, and turn Figma specs into reusable
-            components.
-          </p>
+          <p>{t('about.body')}</p>
+          <p>{t('about.extra')}</p>
         </motion.div>
 
         <motion.aside
           variants={fadeUp}
           className="rounded-xl border border-line bg-ink-soft/70 p-6 shadow-soft"
         >
-          <p className="font-body text-label uppercase tracking-[0.14em] text-rose-soft">Education</p>
-          <p className="mt-3 font-display text-h3 text-mist">{profile.education.school}</p>
-          <p className="mt-1 text-body-sm text-mist-soft">
-            {profile.education.degree} · {profile.education.years}
+          <p className="font-body text-label uppercase tracking-[0.14em] text-rose-soft">
+            {t('about.education')}
           </p>
+          <p className="mt-3 font-display text-h3 text-mist">{t('about.school')}</p>
+          <p className="mt-1 text-body-sm text-mist-soft">{t('about.degree')}</p>
           <div className="mt-6 flex items-start gap-2 text-body-sm text-mist-dim">
-            <MapPin size={16} className="mt-1 shrink-0 text-rose-soft" aria-hidden />
+            <MapPin size={16} className="mt-0.5 shrink-0 text-rose-soft" aria-hidden />
             <span>{profile.location}</span>
           </div>
         </motion.aside>

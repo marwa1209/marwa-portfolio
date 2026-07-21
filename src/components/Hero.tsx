@@ -4,8 +4,11 @@ import { Button } from '@/design-system/Button'
 import { Container } from '@/design-system/Section'
 import { heroReveal, stagger } from '@/design-system/motion'
 import { profile } from '@/data/profile'
+import { useI18n } from '@/i18n/I18nProvider'
 
 export function Hero() {
+  const { t, locale } = useI18n()
+
   return (
     <section
       id="top"
@@ -29,6 +32,7 @@ export function Hero() {
 
       <Container className="relative z-10">
         <motion.div
+          key={locale}
           variants={stagger}
           initial="hidden"
           animate="show"
@@ -38,28 +42,29 @@ export function Hero() {
             variants={heroReveal}
             className="mb-6 font-body text-label uppercase tracking-[0.14em] text-rose-soft"
           >
-            Frontend Engineer · Alexandria
+            {t('hero.eyebrow')}
           </motion.p>
 
           <motion.h1
             variants={heroReveal}
             className="font-display text-display text-champagne-bright"
           >
-            MARWA
+            {locale === 'ar' ? 'مروة' : 'MARWA'}
+            <span className="text-rose">.</span>
           </motion.h1>
 
           <motion.p
             variants={heroReveal}
             className="mt-6 max-w-2xl font-display text-h1 text-mist text-balance"
           >
-            Interfaces that feel calm in English and confident in Arabic.
+            {t('hero.headline')}
           </motion.p>
 
           <motion.p
             variants={heroReveal}
             className="mt-5 max-w-xl text-body text-mist-soft text-pretty"
           >
-            {profile.title}
+            {t('hero.summary')}
           </motion.p>
 
           <motion.div
@@ -67,10 +72,10 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <Button href="#projects" size="lg">
-              View selected work
+              {t('hero.ctaProjects')}
             </Button>
             <Button href="#contact" variant="ghost" size="lg">
-              Get in touch
+              {t('hero.ctaContact')}
             </Button>
           </motion.div>
 
@@ -105,10 +110,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6 }}
           className="mt-16 inline-flex items-center gap-2 text-sm text-mist-dim transition-colors hover:text-champagne"
-          aria-label="Scroll to about section"
+          aria-label={t('nav.about')}
         >
           <ArrowDown size={16} aria-hidden />
-          Scroll
         </motion.a>
       </Container>
     </section>

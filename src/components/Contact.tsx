@@ -4,14 +4,17 @@ import { Button } from '@/design-system/Button'
 import { Section } from '@/design-system/Section'
 import { fadeUp, stagger } from '@/design-system/motion'
 import { profile } from '@/data/profile'
+import { useI18n } from '@/i18n/I18nProvider'
 
 export function Contact() {
+  const { t } = useI18n()
+
   return (
     <Section
       id="contact"
-      eyebrow="Contact"
-      title="Let us talk about your next interface."
-      description="Open to frontend roles, freelance product work, and collaborations on bilingual or performance-sensitive projects."
+      eyebrow={t('contact.eyebrow')}
+      title={t('contact.title')}
+      description={t('contact.description')}
     >
       <motion.div
         variants={stagger}
@@ -21,18 +24,14 @@ export function Contact() {
         className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
       >
         <motion.div variants={fadeUp} className="space-y-6">
-          <p className="max-w-xl text-body text-mist-soft text-pretty">
-            Email is best for introductions. You can also find me on GitHub and LinkedIn for code
-            and career updates.
-          </p>
           <div className="flex flex-wrap gap-4">
             <Button href={`mailto:${profile.email}`} size="lg">
               <Mail size={18} aria-hidden />
-              Email Marwa
+              {t('contact.emailCta')}
             </Button>
             <Button href={profile.linkedin} variant="ghost" size="lg">
               <Linkedin size={18} aria-hidden />
-              LinkedIn
+              {t('contact.linkedin')}
             </Button>
           </div>
         </motion.div>

@@ -1,27 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color */
-  --color-ink: #080b14;
-  --color-ink-soft: #101628;
-  --color-ink-muted: #1a2238;
-  --color-mist: #e8e4dc;
-  --color-mist-soft: #c9c3b8;
-  --color-mist-dim: #8b8478;
-  --color-rose: #c45c6a;
-  --color-rose-deep: #9e3f4d;
-  --color-rose-soft: #e8a0a8;
-  --color-copper: #b8734a;
-  --color-champagne: #e6d5b8;
-  --color-champagne-bright: #f2e6d0;
-  --color-line: rgb(232 228 220 / 0.12);
-  --color-line-strong: rgb(232 228 220 / 0.22);
+  --color-ink: var(--ds-ink);
+  --color-ink-soft: var(--ds-ink-soft);
+  --color-ink-muted: var(--ds-ink-muted);
+  --color-mist: var(--ds-mist);
+  --color-mist-soft: var(--ds-mist-soft);
+  --color-mist-dim: var(--ds-mist-dim);
+  --color-rose: var(--ds-rose);
+  --color-rose-deep: var(--ds-rose-deep);
+  --color-rose-soft: var(--ds-rose-soft);
+  --color-copper: var(--ds-copper);
+  --color-champagne: var(--ds-champagne);
+  --color-champagne-bright: var(--ds-champagne-bright);
+  --color-line: var(--ds-line);
+  --color-line-strong: var(--ds-line-strong);
 
-  /* Font families */
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Manrope", system-ui, sans-serif;
+  --font-display: "Fraunces", "IBM Plex Sans Arabic", Georgia, serif;
+  --font-body: "Manrope", "IBM Plex Sans Arabic", system-ui, sans-serif;
 
-  /* Type scale */
   --text-display: clamp(3.25rem, 9vw, 7.5rem);
   --text-display--line-height: 0.92;
   --text-display--letter-spacing: -0.03em;
@@ -53,28 +50,68 @@
   --text-label--letter-spacing: 0.14em;
   --text-label--font-weight: 600;
 
-  /* Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
   --radius-xl: 1.75rem;
 
-  /* Shadows */
-  --shadow-soft: 0 18px 50px rgb(0 0 0 / 0.35);
-  --shadow-glow: 0 0 80px rgb(196 92 106 / 0.18);
+  --shadow-soft: var(--ds-shadow-soft);
+  --shadow-glow: var(--ds-shadow-glow);
 
-  /* Layout */
   --max-width-shell: 72rem;
 }
 
 @layer base {
-  :root {
+  :root,
+  html[data-theme='dark'] {
     color-scheme: dark;
+    --ds-ink: #080b14;
+    --ds-ink-soft: #101628;
+    --ds-ink-muted: #1a2238;
+    --ds-mist: #e8e4dc;
+    --ds-mist-soft: #c9c3b8;
+    --ds-mist-dim: #8b8478;
+    --ds-rose: #c45c6a;
+    --ds-rose-deep: #9e3f4d;
+    --ds-rose-soft: #e8a0a8;
+    --ds-copper: #b8734a;
+    --ds-champagne: #e6d5b8;
+    --ds-champagne-bright: #f2e6d0;
+    --ds-line: rgb(232 228 220 / 0.12);
+    --ds-line-strong: rgb(232 228 220 / 0.22);
+    --ds-shadow-soft: 0 18px 50px rgb(0 0 0 / 0.35);
+    --ds-shadow-glow: 0 0 80px rgb(196 92 106 / 0.18);
+    --ds-mesh-a: rgb(196 92 106 / 0.28);
+    --ds-mesh-b: rgb(230 213 184 / 0.14);
+    --ds-mesh-c: rgb(184 115 74 / 0.16);
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
     --duration-fast: 220ms;
     --duration-base: 450ms;
     --duration-slow: 800ms;
+  }
+
+  html[data-theme='light'] {
+    color-scheme: light;
+    --ds-ink: #f6f1ea;
+    --ds-ink-soft: #ffffff;
+    --ds-ink-muted: #efe7dc;
+    --ds-mist: #16131c;
+    --ds-mist-soft: #3d3845;
+    --ds-mist-dim: #6d6573;
+    --ds-rose: #b44d5c;
+    --ds-rose-deep: #8f3a48;
+    --ds-rose-soft: #c97884;
+    --ds-copper: #a8663f;
+    --ds-champagne: #7a5c3a;
+    --ds-champagne-bright: #5c4328;
+    --ds-line: rgb(22 19 28 / 0.1);
+    --ds-line-strong: rgb(22 19 28 / 0.18);
+    --ds-shadow-soft: 0 18px 50px rgb(62 40 48 / 0.1);
+    --ds-shadow-glow: 0 0 70px rgb(180 77 92 / 0.14);
+    --ds-mesh-a: rgb(180 77 92 / 0.16);
+    --ds-mesh-b: rgb(168 102 63 / 0.12);
+    --ds-mesh-c: rgb(122 92 58 / 0.1);
   }
 
   *,
@@ -97,6 +134,12 @@
     background: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color var(--duration-base) var(--ease-out),
+      color var(--duration-base) var(--ease-out);
+  }
+
+  html[dir='rtl'] body {
+    letter-spacing: 0;
   }
 
   ::selection {
@@ -141,15 +184,15 @@
   .ds-grain {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
     background-size: 180px 180px;
-    opacity: 0.035;
+    opacity: 0.04;
     pointer-events: none;
   }
 
   .ds-mesh {
     background:
-      radial-gradient(ellipse 70% 55% at 18% 20%, rgb(196 92 106 / 0.28), transparent 55%),
-      radial-gradient(ellipse 55% 45% at 82% 18%, rgb(230 213 184 / 0.14), transparent 50%),
-      radial-gradient(ellipse 60% 50% at 70% 78%, rgb(184 115 74 / 0.16), transparent 55%),
+      radial-gradient(ellipse 70% 55% at 18% 20%, var(--ds-mesh-a), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 82% 18%, var(--ds-mesh-b), transparent 50%),
+      radial-gradient(ellipse 60% 50% at 70% 78%, var(--ds-mesh-c), transparent 55%),
       linear-gradient(165deg, var(--color-ink) 0%, var(--color-ink-soft) 48%, var(--color-ink) 100%);
   }
 }
