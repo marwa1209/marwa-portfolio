@@ -1,4 +1,4 @@
-import type { Locale } from './projects'
+import type { Locale } from '@/data/projects'
 
 type Dict = Record<string, string>
 

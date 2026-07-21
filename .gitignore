@@ -14,11 +14,15 @@ dist
 dist-ssr
 *.local
 
-# Editor
+# Editor / tooling
 .vscode/*
 !.vscode/extensions.json
 .idea
+.cursor
+.cursorignore
+*.swp
 .DS_Store
+Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
@@ -26,3 +30,4 @@ dist-ssr
 # Env
 .env
 .env.*
+!.env.example
