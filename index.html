@@ -2,37 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Marwa Mahmoud — Frontend Engineer</title>
     <meta
       name="description"
-      content="Marwa Mahmoud Elsayed — Frontend Engineer. Angular, React, Next.js, TypeScript. Bilingual EN/AR (RTL)."
-    />
+      content="Marwa Mahmoud Elsayed — Frontend Engineer specializing in Angular, React, Next.js, and TypeScript. Bilingual EN/AR (RTL) UIs from Alexandria, Egypt." />
+    <meta
+      name="keywords"
+      content="Marwa Mahmoud, Frontend Engineer, Angular, React, Next.js, TypeScript, RTL, i18n, web developer, Alexandria" />
+    <meta name="author" content="Marwa Mahmoud Elsayed" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow" />
+    <meta
+      name="theme-color"
+      content="#0c0f14"
+      media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#f6f3ee"
+      media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="google-site-verification"
+      content="4IceKXz-ZC3lTKbHc6XrvUzXkWLzlErjJZF3Wxbki0s" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Marwa Mahmoud — Portfolio" />
+    <meta property="og:title" content="Marwa Mahmoud — Frontend Engineer" />
+    <meta
+      property="og:description"
+      content="Frontend Engineer specializing in Angular, React, Next.js, and TypeScript. Bilingual EN/AR (RTL) UIs." />
+    <meta property="og:image" content="/web-app-manifest-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Marwa Mahmoud — Frontend Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Marwa Mahmoud — Frontend Engineer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Engineer specializing in Angular, React, Next.js, and TypeScript. Bilingual EN/AR (RTL) UIs." />
+    <meta name="twitter:image" content="/web-app-manifest-512x512.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Marwa Mahmoud — Frontend Engineer" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marwa Mahmoud Elsayed",
+        "jobTitle": "Frontend Engineer",
+        "description": "Frontend Engineer specializing in Angular, React, Next.js, and TypeScript. Bilingual EN/AR (RTL) UIs.",
+        "email": "mailto:marwamahmoud832001@gmail.com",
+        "telephone": "+20 1223875489",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Alexandria",
+          "addressCountry": "EG"
+        },
+        "knowsAbout": [
+          "Angular",
+          "React",
+          "Next.js",
+          "TypeScript",
+          "JavaScript",
+          "RTL",
+          "i18n",
+          "SSR",
+          "SEO"
+        ],
+        "sameAs": [
+          "https://github.com/marwa1209",
+          "https://www.linkedin.com/in/marwa-mahmoud2"
+        ]
+      }
+    </script>
+
     <script>
       (function () {
         try {
-          var theme = localStorage.getItem('marwa-theme')
-          if (theme !== 'light' && theme !== 'dark') {
-            theme = window.matchMedia('(prefers-color-scheme: light)').matches
-              ? 'light'
-              : 'dark'
+          var theme = localStorage.getItem("marwa-theme");
+          if (theme !== "light" && theme !== "dark") {
+            theme = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
           }
-          document.documentElement.dataset.theme = theme
-          var locale = localStorage.getItem('marwa-locale')
-          if (locale === 'ar') {
-            document.documentElement.lang = 'ar'
-            document.documentElement.dir = 'rtl'
+          document.documentElement.dataset.theme = theme;
+          var locale = localStorage.getItem("marwa-locale");
+          if (locale === "ar") {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
           }
         } catch (e) {}
-      })()
+      })();
     </script>
-    <title>Marwa Mahmoud — Frontend Engineer</title>
   </head>
   <body>
     <div id="root"></div>
