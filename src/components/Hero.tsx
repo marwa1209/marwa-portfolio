@@ -3,7 +3,6 @@ import { ArrowDown, Github, Linkedin, MapPin, Sparkles } from 'lucide-react'
 import { Button } from '@/design-system/Button'
 import { Container } from '@/design-system/Section'
 import { heroReveal, stagger } from '@/design-system/motion'
-import { ProfileImage } from '@/components/ProfileImage'
 import { profile } from '@/data/profile'
 import { useI18n } from '@/i18n/I18nProvider'
 
@@ -37,15 +36,9 @@ export function Hero() {
           initial="hidden"
           animate="show"
         >
-          <motion.div
-            variants={heroReveal}
-            className="mb-8 flex flex-wrap items-center gap-4"
-          >
-            <ProfileImage priority />
-            <div className="ds-badge">
-              <Sparkles size={14} aria-hidden />
-              {t('hero.eyebrow')}
-            </div>
+          <motion.div variants={heroReveal} className="ds-badge mb-8">
+            <Sparkles size={14} aria-hidden />
+            {t('hero.eyebrow')}
           </motion.div>
 
           <motion.div variants={heroReveal}>
