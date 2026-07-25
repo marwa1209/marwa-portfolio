@@ -7,12 +7,12 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-line py-10">
+    <footer className="border-t border-line bg-ink-soft/40 py-10">
       <Container className="flex flex-col gap-4 text-sm text-mist-dim md:flex-row md:items-center md:justify-between">
         <p>
           © {year} {profile.name}. {t('footer.rights')}
         </p>
-        <p>{t('footer.tagline')}</p>
+        <p className="text-sage-soft/80">{t('footer.tagline')}</p>
       </Container>
     </footer>
   )

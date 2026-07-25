@@ -10,22 +10,27 @@
   --color-rose: var(--ds-rose);
   --color-rose-deep: var(--ds-rose-deep);
   --color-rose-soft: var(--ds-rose-soft);
+  --color-terracotta: var(--ds-terracotta);
+  --color-terracotta-deep: var(--ds-terracotta-deep);
+  --color-sage: var(--ds-sage);
+  --color-sage-soft: var(--ds-sage-soft);
   --color-copper: var(--ds-copper);
   --color-champagne: var(--ds-champagne);
   --color-champagne-bright: var(--ds-champagne-bright);
+  --color-cream: var(--ds-cream);
   --color-line: var(--ds-line);
   --color-line-strong: var(--ds-line-strong);
 
   --font-display: var(--font-fraunces), var(--font-arabic), Georgia, serif;
   --font-body: var(--font-manrope), var(--font-arabic), system-ui, sans-serif;
 
-  --text-display: clamp(3.25rem, 9vw, 7.5rem);
-  --text-display--line-height: 0.92;
+  --text-display: clamp(2.75rem, 7vw, 5.5rem);
+  --text-display--line-height: 0.95;
   --text-display--letter-spacing: -0.03em;
   --text-display--font-weight: 600;
 
-  --text-h1: clamp(2.25rem, 5vw, 3.75rem);
-  --text-h1--line-height: 1.05;
+  --text-h1: clamp(2rem, 4.5vw, 3.25rem);
+  --text-h1--line-height: 1.08;
   --text-h1--letter-spacing: -0.02em;
   --text-h1--font-weight: 600;
 
@@ -58,32 +63,37 @@
   --shadow-soft: var(--ds-shadow-soft);
   --shadow-glow: var(--ds-shadow-glow);
 
-  --max-width-shell: 72rem;
+  --max-width-shell: 76rem;
 }
 
 @layer base {
   :root,
   html[data-theme='dark'] {
     color-scheme: dark;
-    --ds-ink: #080b14;
-    --ds-ink-soft: #101628;
-    --ds-ink-muted: #1a2238;
-    --ds-mist: #e8e4dc;
-    --ds-mist-soft: #c9c3b8;
-    --ds-mist-dim: #8b8478;
-    --ds-rose: #c45c6a;
-    --ds-rose-deep: #9e3f4d;
-    --ds-rose-soft: #e8a0a8;
+    --ds-ink: #14100d;
+    --ds-ink-soft: #1e1814;
+    --ds-ink-muted: #2a221c;
+    --ds-mist: #f3ebe2;
+    --ds-mist-soft: #d4c8bb;
+    --ds-mist-dim: #9a8d80;
+    --ds-cream: #faf6f0;
+    --ds-rose: #c4705a;
+    --ds-rose-deep: #a85642;
+    --ds-rose-soft: #e8a48e;
+    --ds-terracotta: #c4705a;
+    --ds-terracotta-deep: #9e5340;
+    --ds-sage: #7d9b76;
+    --ds-sage-soft: #a8c4a1;
     --ds-copper: #b8734a;
-    --ds-champagne: #e6d5b8;
-    --ds-champagne-bright: #f2e6d0;
-    --ds-line: rgb(232 228 220 / 0.12);
-    --ds-line-strong: rgb(232 228 220 / 0.22);
-    --ds-shadow-soft: 0 18px 50px rgb(0 0 0 / 0.35);
-    --ds-shadow-glow: 0 0 80px rgb(196 92 106 / 0.18);
-    --ds-mesh-a: rgb(196 92 106 / 0.28);
-    --ds-mesh-b: rgb(230 213 184 / 0.14);
-    --ds-mesh-c: rgb(184 115 74 / 0.16);
+    --ds-champagne: #e8dcc8;
+    --ds-champagne-bright: #f7efe4;
+    --ds-line: rgb(243 235 226 / 0.1);
+    --ds-line-strong: rgb(243 235 226 / 0.2);
+    --ds-shadow-soft: 0 22px 60px rgb(0 0 0 / 0.38);
+    --ds-shadow-glow: 0 0 90px rgb(196 112 90 / 0.16);
+    --ds-mesh-a: rgb(125 155 118 / 0.22);
+    --ds-mesh-b: rgb(196 112 90 / 0.18);
+    --ds-mesh-c: rgb(232 220 200 / 0.08);
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
     --duration-fast: 220ms;
@@ -93,25 +103,30 @@
 
   html[data-theme='light'] {
     color-scheme: light;
-    --ds-ink: #f6f1ea;
+    --ds-ink: #faf6f0;
     --ds-ink-soft: #ffffff;
-    --ds-ink-muted: #efe7dc;
-    --ds-mist: #16131c;
-    --ds-mist-soft: #3d3845;
-    --ds-mist-dim: #6d6573;
-    --ds-rose: #b44d5c;
-    --ds-rose-deep: #8f3a48;
-    --ds-rose-soft: #c97884;
+    --ds-ink-muted: #f0e8de;
+    --ds-mist: #1f1712;
+    --ds-mist-soft: #4a3f36;
+    --ds-mist-dim: #7a6d62;
+    --ds-cream: #fffdf9;
+    --ds-rose: #b85a44;
+    --ds-rose-deep: #964832;
+    --ds-rose-soft: #d48472;
+    --ds-terracotta: #b85a44;
+    --ds-terracotta-deep: #8f4533;
+    --ds-sage: #5f7f58;
+    --ds-sage-soft: #8aa882;
     --ds-copper: #a8663f;
-    --ds-champagne: #7a5c3a;
-    --ds-champagne-bright: #5c4328;
-    --ds-line: rgb(22 19 28 / 0.1);
-    --ds-line-strong: rgb(22 19 28 / 0.18);
-    --ds-shadow-soft: 0 18px 50px rgb(62 40 48 / 0.1);
-    --ds-shadow-glow: 0 0 70px rgb(180 77 92 / 0.14);
-    --ds-mesh-a: rgb(180 77 92 / 0.16);
-    --ds-mesh-b: rgb(168 102 63 / 0.12);
-    --ds-mesh-c: rgb(122 92 58 / 0.1);
+    --ds-champagne: #6b4f32;
+    --ds-champagne-bright: #4a3624;
+    --ds-line: rgb(31 23 18 / 0.1);
+    --ds-line-strong: rgb(31 23 18 / 0.16);
+    --ds-shadow-soft: 0 22px 60px rgb(80 55 40 / 0.1);
+    --ds-shadow-glow: 0 0 70px rgb(184 90 68 / 0.12);
+    --ds-mesh-a: rgb(95 127 88 / 0.12);
+    --ds-mesh-b: rgb(184 90 68 / 0.1);
+    --ds-mesh-c: rgb(107 79 50 / 0.08);
   }
 
   *,
@@ -144,8 +159,8 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-rose) 55%, transparent);
-    color: var(--color-champagne-bright);
+    background: color-mix(in oklab, var(--color-sage) 45%, transparent);
+    color: var(--color-cream);
   }
 
   a {
@@ -160,7 +175,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-champagne);
+    outline: 2px solid var(--color-sage-soft);
     outline-offset: 3px;
   }
 }
@@ -182,18 +197,90 @@
     text-wrap: pretty;
   }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   .ds-grain {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
     background-size: 180px 180px;
-    opacity: 0.04;
+    opacity: 0.035;
     pointer-events: none;
   }
 
   .ds-mesh {
     background:
-      radial-gradient(ellipse 70% 55% at 18% 20%, var(--ds-mesh-a), transparent 55%),
-      radial-gradient(ellipse 55% 45% at 82% 18%, var(--ds-mesh-b), transparent 50%),
-      radial-gradient(ellipse 60% 50% at 70% 78%, var(--ds-mesh-c), transparent 55%),
-      linear-gradient(165deg, var(--color-ink) 0%, var(--color-ink-soft) 48%, var(--color-ink) 100%);
+      radial-gradient(ellipse 65% 50% at 12% 15%, var(--ds-mesh-a), transparent 55%),
+      radial-gradient(ellipse 50% 42% at 88% 12%, var(--ds-mesh-b), transparent 48%),
+      radial-gradient(ellipse 55% 45% at 75% 85%, var(--ds-mesh-c), transparent 52%),
+      linear-gradient(168deg, var(--color-ink) 0%, var(--color-ink-soft) 52%, var(--color-ink) 100%);
+  }
+
+  .ds-photo-frame {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .ds-photo-frame-hero {
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 1.75rem 1.75rem;
+  }
+
+  .ds-photo-frame-about {
+    aspect-ratio: 4 / 5;
+    border-radius: 1.75rem 1.75rem 999px 999px;
+  }
+
+  .ds-photo-frame-nav {
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .ds-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line-strong);
+    background: color-mix(in oklab, var(--color-ink-soft) 80%, transparent);
+    padding: 0.45rem 0.9rem;
+    font-size: var(--text-label);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-sage-soft);
+  }
+
+  .ds-card {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-line);
+    background: color-mix(in oklab, var(--color-ink-soft) 72%, transparent);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ds-section-band {
+    border-top: 1px solid var(--color-line);
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--color-ink-soft) 40%, transparent), transparent 120px);
+  }
+
+  .ds-stack-pill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: color-mix(in oklab, var(--color-ink-muted) 55%, transparent);
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-mist-soft);
   }
 }

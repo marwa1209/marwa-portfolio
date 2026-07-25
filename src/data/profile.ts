@@ -6,6 +6,7 @@
   github: 'https://github.com/marwa1209',
   linkedin: 'https://www.linkedin.com/in/marwa-mahmoud2',
   location: 'Alexandria, Egypt',
+  avatar: '/profile.jpg',
 } as const
 
 export const skillGroups = [

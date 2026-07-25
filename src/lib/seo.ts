@@ -14,7 +14,7 @@ export function personJsonLd() {
     url: SITE_URL,
     email: profile.email,
     telephone: profile.phone,
-    image: `${SITE_URL}/opengraph-image`,
+    image: `${SITE_URL}${profile.avatar}`,
     sameAs: [profile.github, profile.linkedin],
     address: {
       '@type': 'PostalAddress',

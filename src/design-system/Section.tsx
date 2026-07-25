@@ -30,6 +30,7 @@ type SectionProps = {
   description?: string
   children: ReactNode
   className?: string
+  number?: string
 }
 
 export function Section({
@@ -39,19 +40,30 @@ export function Section({
   description,
   children,
   className = '',
+  number,
 }: SectionProps) {
   return (
     <section id={id} className={`relative py-20 md:py-28 ${className}`.trim()}>
       <Container>
-        <header className="mb-12 max-w-2xl md:mb-16">
-          {eyebrow ? (
-            <p className="mb-4 font-body text-label uppercase tracking-[0.14em] text-rose-soft">
-              {eyebrow}
+        <header className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            {eyebrow ? (
+              <p className="mb-4 font-body text-label uppercase tracking-[0.14em] text-sage-soft">
+                {eyebrow}
+              </p>
+            ) : null}
+            <h2 className="font-display text-h2 text-mist text-balance">{title}</h2>
+            {description ? (
+              <p className="mt-4 max-w-xl text-body text-mist-soft text-pretty">{description}</p>
+            ) : null}
+          </div>
+          {number ? (
+            <p
+              className="font-display text-5xl leading-none text-line-strong md:text-6xl"
+              aria-hidden
+            >
+              {number}
             </p>
-          ) : null}
-          <h2 className="font-display text-h2 text-mist text-balance">{title}</h2>
-          {description ? (
-            <p className="mt-4 max-w-xl text-body text-mist-soft text-pretty">{description}</p>
           ) : null}
         </header>
         {children}
