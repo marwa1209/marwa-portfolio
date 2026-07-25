@@ -23,7 +23,7 @@ export const skillGroups = [
   },
   {
     labelKey: 'skills.tools',
-    items: ['Git', 'Vite', 'Tailwind', 'Stripe', 'PrimeNG', 'MUI'],
+    items: ['Git', 'Next.js', 'Tailwind', 'Stripe', 'PrimeNG', 'MUI'],
   },
 ] as const
 

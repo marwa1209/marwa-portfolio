@@ -12,6 +12,8 @@ node_modules
 # Build
 dist
 dist-ssr
+.next
+out
 *.local
 
 # Editor / tooling

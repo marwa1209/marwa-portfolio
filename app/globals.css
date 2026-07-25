@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-ink: var(--ds-ink);
@@ -16,8 +16,8 @@
   --color-line: var(--ds-line);
   --color-line-strong: var(--ds-line-strong);
 
-  --font-display: "Fraunces", "IBM Plex Sans Arabic", Georgia, serif;
-  --font-body: "Manrope", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-display: var(--font-fraunces), var(--font-arabic), Georgia, serif;
+  --font-body: var(--font-manrope), var(--font-arabic), system-ui, sans-serif;
 
   --text-display: clamp(3.25rem, 9vw, 7.5rem);
   --text-display--line-height: 0.92;
@@ -134,7 +134,8 @@
     background: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition: background-color var(--duration-base) var(--ease-out),
+    transition:
+      background-color var(--duration-base) var(--ease-out),
       color var(--duration-base) var(--ease-out);
   }
 

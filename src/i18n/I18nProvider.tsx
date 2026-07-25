@@ -1,3 +1,5 @@
+'use client'
+
 import {
   createContext,
   useCallback,
@@ -8,6 +10,7 @@ import {
   type ReactNode,
 } from 'react'
 import type { Locale } from '@/data/projects'
+import { setLocaleCookie, LOCALE_COOKIE } from '@/lib/preferences'
 import { translate } from './messages'
 
 type I18nContextValue = {
@@ -19,26 +22,24 @@ type I18nContextValue = {
 
 const I18nContext = createContext<I18nContextValue | null>(null)
 
-const STORAGE_KEY = 'marwa-locale'
-
-function readLocale(): Locale {
-  const saved = localStorage.getItem(STORAGE_KEY)
-  if (saved === 'ar' || saved === 'en') return saved
-  return 'en'
+type I18nProviderProps = {
+  children: ReactNode
+  initialLocale: Locale
 }
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('en')
-
-  useEffect(() => {
-    setLocaleState(readLocale())
-  }, [])
+export function I18nProvider({ children, initialLocale }: I18nProviderProps) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale)
 
   useEffect(() => {
     const dir = locale === 'ar' ? 'rtl' : 'ltr'
     document.documentElement.lang = locale
     document.documentElement.dir = dir
-    localStorage.setItem(STORAGE_KEY, locale)
+    setLocaleCookie(locale)
+    try {
+      localStorage.setItem(LOCALE_COOKIE, locale)
+    } catch {
+      /* ignore */
+    }
   }, [locale])
 
   const setLocale = useCallback((next: Locale) => {

@@ -17,7 +17,7 @@ I built this to showcase production work from **Blue Sky** and **Sourcya**, plus
 
 | Layer | Choice |
 | --- | --- |
-| App | Vite + React 19 + TypeScript |
+| App | **Next.js 15** (App Router, SSR) + React 19 + TypeScript |
 | Styles | Tailwind CSS v4 |
 | Motion | Framer Motion |
 | Icons | lucide-react |
@@ -32,16 +32,19 @@ pnpm install
 pnpm dev
 ```
 
-Then open the local URL Vite prints (usually `http://localhost:5173`).
+Then open `http://localhost:3000`.
 
 ```bash
 pnpm build
-pnpm preview
+pnpm start
 ```
+
+Deploy on **Vercel** — framework auto-detects Next.js (no `dist` output folder).
 
 ## Project structure
 
 ```text
+app/              # Next.js layout, page, metadata, sitemap
 src/
   components/     # Page sections
   data/           # Profile + project content

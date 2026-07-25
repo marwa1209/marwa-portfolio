@@ -1,3 +1,5 @@
+'use client'
+
 import {
   createContext,
   useCallback,
@@ -8,6 +10,7 @@ import {
   type ReactNode,
 } from 'react'
 import type { Theme } from '@/data/projects'
+import { setThemeCookie, THEME_COOKIE } from '@/lib/preferences'
 
 type ThemeContextValue = {
   theme: Theme
@@ -17,24 +20,22 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-const STORAGE_KEY = 'marwa-theme'
-
-function readTheme(): Theme {
-  const saved = localStorage.getItem(STORAGE_KEY)
-  if (saved === 'light' || saved === 'dark') return saved
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+type ThemeProviderProps = {
+  children: ReactNode
+  initialTheme: Theme
 }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark')
-
-  useEffect(() => {
-    setThemeState(readTheme())
-  }, [])
+export function ThemeProvider({ children, initialTheme }: ThemeProviderProps) {
+  const [theme, setThemeState] = useState<Theme>(initialTheme)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
-    localStorage.setItem(STORAGE_KEY, theme)
+    setThemeCookie(theme)
+    try {
+      localStorage.setItem(THEME_COOKIE, theme)
+    } catch {
+      /* ignore */
+    }
   }, [theme])
 
   const setTheme = useCallback((next: Theme) => {
