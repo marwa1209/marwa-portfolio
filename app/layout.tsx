@@ -95,11 +95,6 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
   },
-  icons: {
-    icon: [{ url: '/profile.jpg', type: 'image/jpeg' }],
-    shortcut: ['/profile.jpg'],
-    apple: [{ url: '/profile.jpg', type: 'image/jpeg' }],
-  },
   verification: {
     google: siteConfig.googleSiteVerification,
   },
