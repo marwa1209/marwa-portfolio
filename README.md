@@ -1,10 +1,21 @@
-﻿# Marwa Mahmoud — Portfolio
+﻿# Marwa Mahmoud Elsayed — Frontend Engineer Portfolio
 
-Personal frontend portfolio for [Marwa Mahmoud Elsayed](https://www.linkedin.com/in/marwa-mahmoud2).
+**Live site:** [marwa-portfolio-roan.vercel.app](https://marwa-portfolio-roan.vercel.app)
 
-I built this to showcase production work from **Blue Sky** and **Sourcya**, plus a clear view of how I design, ship, and localize UI.
+Personal frontend portfolio for [Marwa Mahmoud Elsayed](https://www.linkedin.com/in/marwa-mahmoud2) — Frontend Engineer in Alexandria, Egypt.
 
-**Live focus:** Angular · React · Next.js · TypeScript · bilingual EN/AR (RTL)
+Production TypeScript UIs with **Angular**, **React**, and **Next.js**. Bilingual **English / Arabic (RTL)**, SSR, SEO, and Figma-to-code.
+
+I built this to showcase work from **Blue Sky** and **Sourcya**.
+
+## Links
+
+| | |
+| --- | --- |
+| **Portfolio** | https://marwa-portfolio-roan.vercel.app |
+| **LinkedIn** | https://www.linkedin.com/in/marwa-mahmoud2 |
+| **GitHub** | https://github.com/marwa1209 |
+| **Email** | marwamahmoud832001@gmail.com |
 
 ## Features
 
@@ -12,6 +23,7 @@ I built this to showcase production work from **Blue Sky** and **Sourcya**, plus
 - English / Arabic with full RTL support
 - Project gallery filtered by company (Blue Sky / Sourcya)
 - Responsive layout, Framer Motion transitions, and a small design-token system
+- Server-rendered Next.js with sitemap, robots.txt, and structured data (JSON-LD)
 
 ## Stack
 
@@ -39,7 +51,7 @@ pnpm build
 pnpm start
 ```
 
-Deploy on **Vercel** — framework auto-detects Next.js (no `dist` output folder).
+Deploy on **Vercel** — framework preset: Next.js (`vercel.json` included).
 
 ## Project structure
 
@@ -52,13 +64,6 @@ src/
   i18n/           # EN / AR messages + provider
   theme/          # Dark / light provider
 ```
-
-## Contact
-
-- Email: marwamahmoud832001@gmail.com
-- LinkedIn: [marwa-mahmoud2](https://www.linkedin.com/in/marwa-mahmoud2)
-- GitHub: [marwa1209](https://github.com/marwa1209)
-- Location: Alexandria, Egypt
 
 ## License
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { JsonLd } from '@/components/JsonLd'
+import { SeoContent } from '@/components/SeoContent'
 import { PortfolioApp } from '@/PortfolioApp'
 import { siteConfig, SITE_URL } from '@/lib/site'
 
@@ -24,6 +25,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd />
+      <SeoContent />
       <PortfolioApp />
     </>
   )

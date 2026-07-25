@@ -37,4 +37,5 @@ export const siteConfig = {
   github: profile.github,
   linkedin: profile.linkedin,
   location: profile.location,
+  googleSiteVerification: '4IceKXz-ZC3lTKbHc6XrvUzXkWLzlErjJZF3Wxbki0s',
 } as const

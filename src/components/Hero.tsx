@@ -45,13 +45,14 @@ export function Hero() {
             {t('hero.eyebrow')}
           </motion.p>
 
-          <motion.h1
+          <motion.p
             variants={heroReveal}
             className="font-display text-display text-champagne-bright"
+            aria-hidden
           >
             {locale === 'ar' ? 'مروة' : 'MARWA'}
             <span className="text-rose">.</span>
-          </motion.h1>
+          </motion.p>
 
           <motion.p
             variants={heroReveal}
