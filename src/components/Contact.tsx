@@ -1,5 +1,6 @@
 ﻿import { motion } from 'framer-motion'
 import { Mail, Phone, Github, Linkedin } from 'lucide-react'
+import { ProfileImage } from '@/components/ProfileImage'
 import { Button } from '@/design-system/Button'
 import { Section } from '@/design-system/Section'
 import { fadeUp, stagger } from '@/design-system/motion'
@@ -24,17 +25,32 @@ export function Contact() {
         viewport={{ once: true, margin: '-60px' }}
         className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
       >
-        <motion.div variants={fadeUp} className="space-y-6">
-          <p className="font-display text-h3 text-mist">{profile.name}</p>
-          <div className="flex flex-wrap gap-4">
-            <Button href={`mailto:${profile.email}`} size="lg">
-              <Mail size={18} aria-hidden />
-              {t('contact.emailCta')}
-            </Button>
-            <Button href={profile.linkedin} variant="ghost" size="lg">
-              <Linkedin size={18} aria-hidden />
-              {t('contact.linkedin')}
-            </Button>
+        <motion.div
+          variants={fadeUp}
+          className="relative overflow-hidden rounded-[1.75rem] border border-line bg-ink-soft/70 p-8 shadow-soft"
+        >
+          <div
+            className="pointer-events-none absolute -end-8 -top-8 h-32 w-32 rounded-full bg-sage/10 blur-2xl"
+            aria-hidden
+          />
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+            <div className="mx-auto shrink-0 sm:mx-0">
+              <ProfileImage size="md" />
+            </div>
+            <div className="space-y-4 text-center sm:text-start">
+              <p className="font-display text-h3 text-mist">{profile.name}</p>
+              <p className="text-body-sm text-mist-soft">{t('contact.description')}</p>
+              <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+                <Button href={`mailto:${profile.email}`} size="lg">
+                  <Mail size={18} aria-hidden />
+                  {t('contact.emailCta')}
+                </Button>
+                <Button href={profile.linkedin} variant="ghost" size="lg">
+                  <Linkedin size={18} aria-hidden />
+                  {t('contact.linkedin')}
+                </Button>
+              </div>
+            </div>
           </div>
         </motion.div>
 
