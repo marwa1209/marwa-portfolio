@@ -4,7 +4,7 @@ import { profile } from '@/data/profile'
 type ProfileImageProps = {
   priority?: boolean
   className?: string
-  size?: 'sm' | 'md'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 const sizeStyles = {
@@ -17,6 +17,11 @@ const sizeStyles = {
     wrapper: 'size-28 sm:size-32',
     dimension: 128,
     sizes: '128px',
+  },
+  lg: {
+    wrapper: 'size-36 sm:size-40 lg:size-44',
+    dimension: 176,
+    sizes: '(max-width: 1024px) 160px, 176px',
   },
 } as const
 

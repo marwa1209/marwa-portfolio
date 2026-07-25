@@ -40,11 +40,39 @@ export const heroReveal: Variants = {
   },
 }
 
-export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.96 },
+export const floatY: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: motion.slow, ease: motion.easeOut },
+  },
+}
+
+export const slideIn: Variants = {
+  hidden: { opacity: 0, x: 32 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: motion.slow, ease: motion.easeOut },
+  },
+}
+
+export const pillPop: Variants = {
+  hidden: { opacity: 0, scale: 0.85, y: 8 },
   show: {
     opacity: 1,
     scale: 1,
+    y: 0,
     transition: { duration: motion.base, ease: motion.easeOut },
+  },
+}
+
+export const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.92 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: motion.slow, ease: motion.easeOut },
   },
 }
