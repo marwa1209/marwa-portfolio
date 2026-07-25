@@ -1,5 +1,5 @@
 ﻿export const profile = {
-  name: 'Marwa Mahmoud Elsayed',
+  name: 'Marwa Mahmoud',
   shortName: 'Marwa',
   email: 'marwamahmoud832001@gmail.com',
   phone: '+20 1223875489',

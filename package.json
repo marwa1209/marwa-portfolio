@@ -2,13 +2,13 @@
   "name": "marwa-portfolio",
   "private": true,
   "version": "2.0.0",
-  "description": "Marwa Mahmoud Elsayed — Frontend Engineer portfolio (Angular, React, Next.js, TypeScript, EN/AR RTL)",
+  "description": "Marwa Mahmoud — Frontend Engineer portfolio (Angular, React, Next.js, TypeScript, EN/AR RTL)",
   "homepage": "https://marwa-portfolio-roan.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/marwa1209/marwa-portfolio.git"
   },
-  "author": "Marwa Mahmoud Elsayed <marwamahmoud832001@gmail.com>",
+  "author": "Marwa Mahmoud <marwamahmoud832001@gmail.com>",
   "type": "module",
   "packageManager": "pnpm@10.15.1",
   "scripts": {

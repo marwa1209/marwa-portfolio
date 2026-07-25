@@ -1,7 +1,6 @@
 ﻿import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Languages, Menu, Moon, Sun, X } from 'lucide-react'
-import { ProfileImage } from '@/components/ProfileImage'
 import { Container } from '@/design-system/Section'
 import { fadeIn } from '@/design-system/motion'
 import { profile } from '@/data/profile'
@@ -65,14 +64,11 @@ export function Nav() {
       <Container className="flex h-[4.25rem] items-center justify-between md:h-[4.75rem]">
         <a
           href="#top"
-          className="group flex items-center gap-3 transition-opacity hover:opacity-90"
+          className="font-display text-base tracking-tight text-champagne-bright transition-opacity hover:opacity-90 md:text-lg"
         >
-          <ProfileImage variant="nav" />
-          <span className="font-display text-base tracking-tight text-champagne-bright md:text-lg">
-            {profile.shortName}
-            <span className="hidden text-mist-dim sm:inline"> Mahmoud</span>
-            <span className="text-terracotta">.</span>
-          </span>
+          {profile.shortName}
+          <span className="hidden text-mist-dim sm:inline"> Mahmoud</span>
+          <span className="text-terracotta">.</span>
         </a>
 
         <nav className="hidden items-center gap-1 rounded-full border border-line bg-ink-soft/50 p-1 md:flex" aria-label="Primary">

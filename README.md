@@ -1,8 +1,8 @@
-﻿# Marwa Mahmoud Elsayed — Frontend Engineer Portfolio
+﻿# Marwa Mahmoud — Frontend Engineer Portfolio
 
 **Live site:** [marwa-portfolio-roan.vercel.app](https://marwa-portfolio-roan.vercel.app)
 
-Personal frontend portfolio for [Marwa Mahmoud Elsayed](https://www.linkedin.com/in/marwa-mahmoud2) — Frontend Engineer in Alexandria, Egypt.
+Personal frontend portfolio for [Marwa Mahmoud](https://www.linkedin.com/in/marwa-mahmoud2) — Frontend Engineer in Alexandria, Egypt.
 
 Production TypeScript UIs with **Angular**, **React**, and **Next.js**. Bilingual **English / Arabic (RTL)**, SSR, SEO, and Figma-to-code.
 

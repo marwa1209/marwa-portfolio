@@ -30,112 +30,103 @@ export function Hero() {
         aria-hidden
       />
 
-      <Container className="relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
+      <Container className="relative z-10 max-w-4xl">
+        <motion.div
+          key={locale}
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+        >
           <motion.div
-            key={locale}
-            variants={stagger}
-            initial="hidden"
-            animate="show"
-            className="order-2 lg:order-1"
+            variants={heroReveal}
+            className="mb-8 flex flex-wrap items-center gap-4"
           >
-            <motion.div variants={heroReveal} className="ds-badge mb-8">
+            <ProfileImage priority />
+            <div className="ds-badge">
               <Sparkles size={14} aria-hidden />
               {t('hero.eyebrow')}
-            </motion.div>
+            </div>
+          </motion.div>
 
-            <motion.div variants={heroReveal} className="space-y-1">
-              <p className="font-display text-display text-champagne-bright text-balance">
-                {isAr ? 'مروة محمود' : 'Marwa Mahmoud'}
-              </p>
-              <p className="font-display text-h1 text-mist/90">
-                {isAr ? 'Elsayed' : 'Elsayed'}
-                <span className="text-terracotta">.</span>
-              </p>
-            </motion.div>
+          <motion.div variants={heroReveal}>
+            <p className="font-display text-display text-champagne-bright text-balance">
+              {isAr ? 'مروة محمود' : 'Marwa Mahmoud'}
+              <span className="text-terracotta">.</span>
+            </p>
+          </motion.div>
 
-            <motion.p
-              variants={heroReveal}
-              className="mt-3 font-body text-label uppercase tracking-[0.16em] text-sage-soft"
-            >
-              {isAr ? 'مهندسة واجهات أمامية' : 'Frontend Engineer'}
-            </motion.p>
+          <motion.p
+            variants={heroReveal}
+            className="mt-3 font-body text-label uppercase tracking-[0.16em] text-sage-soft"
+          >
+            {isAr ? 'مهندسة واجهات أمامية' : 'Frontend Engineer'}
+          </motion.p>
 
-            <motion.p
-              variants={heroReveal}
-              className="mt-8 max-w-xl font-display text-h2 text-mist text-balance"
-            >
-              {t('hero.headline')}
-            </motion.p>
+          <motion.p
+            variants={heroReveal}
+            className="mt-8 max-w-2xl font-display text-h2 text-mist text-balance"
+          >
+            {t('hero.headline')}
+          </motion.p>
 
-            <motion.p
-              variants={heroReveal}
-              className="mt-5 max-w-lg text-body text-mist-soft text-pretty"
-            >
-              {t('hero.summary')}
-            </motion.p>
+          <motion.p
+            variants={heroReveal}
+            className="mt-5 max-w-xl text-body text-mist-soft text-pretty"
+          >
+            {t('hero.summary')}
+          </motion.p>
 
-            <motion.div
-              variants={heroReveal}
-              className="mt-8 flex flex-wrap gap-2"
-            >
-              {stackPills.map((item) => (
-                <span key={item} className="ds-stack-pill">
-                  {item}
-                </span>
-              ))}
-            </motion.div>
-
-            <motion.div
-              variants={heroReveal}
-              className="mt-10 flex flex-wrap items-center gap-4"
-            >
-              <Button href="#projects" size="lg">
-                {t('hero.ctaProjects')}
-              </Button>
-              <Button href="#contact" variant="ghost" size="lg">
-                {t('hero.ctaContact')}
-              </Button>
-            </motion.div>
-
-            <motion.div
-              variants={heroReveal}
-              className="mt-10 flex flex-wrap items-center gap-6 text-sm text-mist-dim"
-            >
-              <span className="inline-flex items-center gap-2">
-                <MapPin size={16} className="text-sage-soft" aria-hidden />
-                {profile.location}
+          <motion.div
+            variants={heroReveal}
+            className="mt-8 flex flex-wrap gap-2"
+          >
+            {stackPills.map((item) => (
+              <span key={item} className="ds-stack-pill">
+                {item}
               </span>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-champagne-bright"
-              >
-                <Github size={18} aria-hidden />
-                GitHub
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-champagne-bright"
-              >
-                <Linkedin size={18} aria-hidden />
-                LinkedIn
-              </a>
-            </motion.div>
+            ))}
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="order-1 flex justify-center lg:order-2 lg:justify-end"
+            variants={heroReveal}
+            className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <ProfileImage variant="hero" priority />
+            <Button href="#projects" size="lg">
+              {t('hero.ctaProjects')}
+            </Button>
+            <Button href="#contact" variant="ghost" size="lg">
+              {t('hero.ctaContact')}
+            </Button>
           </motion.div>
-        </div>
+
+          <motion.div
+            variants={heroReveal}
+            className="mt-10 flex flex-wrap items-center gap-6 text-sm text-mist-dim"
+          >
+            <span className="inline-flex items-center gap-2">
+              <MapPin size={16} className="text-sage-soft" aria-hidden />
+              {profile.location}
+            </span>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-champagne-bright"
+            >
+              <Github size={18} aria-hidden />
+              GitHub
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-champagne-bright"
+            >
+              <Linkedin size={18} aria-hidden />
+              LinkedIn
+            </a>
+          </motion.div>
+        </motion.div>
 
         <motion.a
           href="#about"

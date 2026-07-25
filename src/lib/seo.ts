@@ -8,7 +8,7 @@ export function personJsonLd() {
     '@id': `${SITE_URL}/#person`,
     name: profile.name,
     givenName: profile.shortName,
-    familyName: 'Mahmoud Elsayed',
+    familyName: 'Mahmoud',
     jobTitle: 'Frontend Engineer',
     description: siteConfig.description,
     url: SITE_URL,
