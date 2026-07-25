@@ -14,7 +14,7 @@ export function personJsonLd() {
     url: SITE_URL,
     email: profile.email,
     telephone: profile.phone,
-    image: `${SITE_URL}${profile.avatar}`,
+    image: `${SITE_URL}/web-app-manifest-512x512.png`,
     sameAs: [profile.github, profile.linkedin],
     address: {
       '@type': 'PostalAddress',
