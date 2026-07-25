@@ -95,6 +95,10 @@ export const metadata: Metadata = {
       'x-default': SITE_URL,
     },
   },
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: ['/favicon.svg'],
+  },
   verification: {
     google: siteConfig.googleSiteVerification,
   },
